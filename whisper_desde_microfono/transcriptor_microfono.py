@@ -1,8 +1,9 @@
 # https://www.youtube.com/watch?v=sLiLkglsGl0&list=PLQuweJwUYMhXzZ1YxibQ3OyaYMWz8Hqam&index=33
+# Error de VoiceAge: https://stackoverflow.com/questions/74668118/voiceage-error-while-using-pyttsx3-module-to-add-voice-to-statements/74727956#74727956
 import io
 from pydub import AudioSegment
 import speech_recognition as sr
-import whisper_demo
+import whisper
 import tempfile
 import os
 import pyttsx3
@@ -29,7 +30,7 @@ def talk(text):
     engine.runAndWait()
 
 
-def listen():
+def listen(): 
     try:
         with sr.Microphone() as source: # Tomo al microfono como fuente           
             print("Dia algo...")
@@ -44,7 +45,7 @@ def listen():
 
 
 def recognize_audio(save_path):
-    audio_model = whisper_demo.load_model('base') # Seteo el modelo
+    audio_model = whisper.load_model('base') # Seteo el modelo
     transcription = audio_model.transcribe(save_path, language='spanish', fp16=False)
     return transcription['text']
 
