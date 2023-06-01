@@ -6,4 +6,4 @@ SpeechRecognition
 pyttsx3
 pydub
 pywhatkit
-pyobjc==9.0.1
+#pyobjc # Solo es necesario en Mac
