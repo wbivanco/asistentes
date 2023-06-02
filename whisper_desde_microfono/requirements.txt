@@ -8,4 +8,7 @@ pydub
 pywhatkit
 fakeyou
 pygame
+python-dotenv
+langchain
+openai
 #pyobjc # Solo es necesario en Mac
