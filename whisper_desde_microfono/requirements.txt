@@ -6,4 +6,6 @@ SpeechRecognition
 pyttsx3
 pydub
 pywhatkit
+fakeyou
+pygame
 #pyobjc # Solo es necesario en Mac
