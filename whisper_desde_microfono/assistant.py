@@ -1,8 +1,3 @@
-# Video 1: https://www.youtube.com/watch?v=sLiLkglsGl0&list=PLQuweJwUYMhXzZ1YxibQ3OyaYMWz8Hqam&index=33
-# Video 2: https://www.youtube.com/watch?v=9IehXU1siTs&list=PLQuweJwUYMhXzZ1YxibQ3OyaYMWz8Hqam&index=33
-# Error de VoiceAge: https://stackoverflow.com/questions/74668118/voiceage-error-while-using-pyttsx3-module-to-add-voice-to-statements/74727956#74727956
-
-import pyttsx3
 import pywhatkit
 from  modules.listen import Listener
 from  modules.talk import Talk
