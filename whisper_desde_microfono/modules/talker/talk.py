@@ -1,4 +1,3 @@
-
 import pyttsx3
 import fakeyou
 import tempfile
@@ -10,7 +9,7 @@ from pygame import mixer
 fake_you = fakeyou.FakeYou()
 
 
-class Talk:
+class FakeYouTalker:
     def __init__(self, username, password, model_name):
         # Seteo los valores de user, pass y modelo a utilizar de fakeyou
         self.username = username
@@ -41,3 +40,23 @@ class Talk:
         audio_duration = mixer.Sound(filename).get_length()
         mixer.music.play()
         time_sleep(audio_duration) # Se crea una demora por error en la librería?
+
+
+class TtsTalker:
+    def __init__(self):
+        self.engine = pyttsx3.init()
+        self.engine.setProperty('rate', 145) # Seteo una buena velocidad de reproducción
+        self.voices = self.engine.getProperty('voices') # Lista las voces del sistema
+        self.engine.setProperty('voice', self.voices[3].id) # Selecciona la cuarta voz
+
+    def talk(self, text):
+        self.engine.say(text)
+        self.engine.runAndWait()
+
+
+class Talker:
+    def __init__(self, talker_cls):
+        self.talker_cls = talker_cls
+
+    def talk(self, text):
+        self.talker_cls.talk(text)

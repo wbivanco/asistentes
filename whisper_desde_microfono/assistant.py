@@ -1,29 +1,17 @@
-import dotenv
-import os
-import pywhatkit
 from  modules.listen import Listener
-from  modules.talk import Talk
+from  modules.keywords.keywords import keywords
 
-
-dotenv.load_dotenv()
-FAKEYOU_PASSWORD = os.getenv("FAKEYOU_PASSSWORD")
 
 def main():
     listener = Listener()
-    talker = Talk('usuario', FAKEYOU_PASSWORD, 'auronplay') # 'bob esponja'
     try:
         response = listener.listen()
-        if 'reproduce' in response:
-            song = response.replace('reproduce', '')
-            talker.talk(f'Reproduciendo {song}')
-            pywhatkit.playonyt(song)    
-        #else:
-            #talker.talk(response) # Reproduce lo que uno dice
+        command = list(filter(lambda x:x in response, keywords))
+        if command:
+            keywords[command[0]]()
     except Exception as e:
-        talker.talk(f'Lo siento  no te entendí debido a este error: {e}')
+        print(f'Lo siento  no te entendí debido a este error: {e}')        
         print(e)
-    #talk(response)
-    #print(response)
 
 
 if __name__ == '__main__':
