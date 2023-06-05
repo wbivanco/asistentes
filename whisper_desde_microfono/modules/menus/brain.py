@@ -24,5 +24,5 @@ def generate_response():
 def start_brain_mode():
     say_welcome()
     assistant_response = generate_response()
-    print(assistant_response)
-    talker.talk(assistant_response)
+    print(assistant_response.content)
+    talker.talk(assistant_response.content)
