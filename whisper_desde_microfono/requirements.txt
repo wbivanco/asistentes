@@ -11,4 +11,5 @@ pygame
 python-dotenv
 langchain
 openai
+notion-client
 #pyobjc # Solo es necesario en Mac

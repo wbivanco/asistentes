@@ -1,11 +1,13 @@
 from modules.talker.talk import Talker, TtsTalker
 from modules.listen import Listener
+from modules.notion.notion_integration import Notion
 from modules.langchain_assitant.langchain_brain import LangChainBrainAsistant
 
 
 talker = Talker(TtsTalker())
 listener = Listener()
 langchain_assistant = LangChainBrainAsistant()
+notion = Notion()
 
 
 def say_welcome():
@@ -20,6 +22,9 @@ def listen_to_response():
 def generate_response():
     response = langchain_assistant.chat(listen_to_response())
     return response 
+
+def create_notion_page(data):
+    pass
 
 def start_brain_mode():
     say_welcome()
