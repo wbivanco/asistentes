@@ -1,5 +1,10 @@
 
-# pip install git+https://github.com/openai/whisper.git
-# pandas
+#### Librerías a instalar en el SO ####
+## GNU/Linux
 # sudo apt update && sudo apt install ffmpeg
+## Mac
 # brew install ffmpeg
+
+#### Librerias a instalar con pip ####
+# pip install git+https://github.com/openai/whisper.git
+pandas
